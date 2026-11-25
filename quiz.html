@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sprawdź swoją wiedzę o regionalnych słowach i tradycjach. Projekt Kultura od Nowa.">
+    <title>Quiz. Kultura od Nowa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <script src="navigation.js"></script>
+    <script src="dane.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body data-strona="quiz">
+    <a class="skip-link" href="#tresc">Przejdź do treści</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Kultura od Nowa, strona główna">
+                <span class="logo-frame">
+                    <span class="logo-fallback" aria-hidden="true" hidden>KN</span>
+                    <img src="logo.png" alt="" width="76" height="76">
+                </span>
+                <span>Kultura <span class="red-text">od Nowa</span></span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu</button>
+            <nav id="main-nav" aria-label="Menu główne">
+                <a href="index.html">Start</a>
+                <a href="slownik.html">Słownik</a>
+                <a href="tradycje.html">Tradycje</a>
+                <a href="quiz.html" aria-current="page">Quiz</a>
+                <a href="o-projekcie.html">O projekcie</a>
+                <a href="tworcy.html">Twórcy</a>
+                <a href="zrodla.html">Źródła</a>
+                <a href="linki.html">Nasze media</a>
+            </nav>
+        </div>
+    </header>
+    <main id="tresc">
+        <section id="quiz" class="quiz-band" aria-labelledby="quiz-title">
+            <div class="container quiz-layout">
+                <div class="quiz-intro">
+                    <h1 id="quiz-title" class="page-title">Sprawdź, ile wiesz.</h1>
+                    <p>Wybierz region i temat, a potem rozpocznij rundę. Po każdej odpowiedzi poznasz wyjaśnienie i źródło.</p>
+                    <p class="quiz-details">Trzy odpowiedzi do wyboru. Bez limitu czasu.</p>
+                    <p id="quiz-bank-count" class="quiz-details"></p>
+                    <a href="slownik.html" class="text-link">Wróć do materiałów</a>
+                </div>
+                <div>
+                    <form id="quiz-settings" class="quiz-settings">
+                        <div>
+                            <label for="quiz-region">Region pytań</label>
+                            <select id="quiz-region"><option value="">Wszystkie regiony</option></select>
+                        </div>
+                        <div>
+                            <label for="quiz-type">Temat rundy</label>
+                            <select id="quiz-type">
+                                <option value="">Słowa i tradycje</option>
+                                <option value="Słowo">Tylko słowa</option>
+                                <option value="Tradycja">Tylko tradycje</option>
+                            </select>
+                        </div>
+                        <p id="quiz-pool-info" role="status" class="quiz-pool-info"></p>
+                        <button id="start-quiz" class="button" type="submit">Rozpocznij rundę</button>
+                    </form>
+                    <div class="quiz-panel">
+                        <p id="quiz-ready">Pytania pojawią się po rozpoczęciu rundy.</p>
+                        <p id="quiz-empty" hidden>Brak pytań dla tego zestawu. Wybierz inny region lub temat.</p>
+                        <div id="question-view" hidden>
+                            <p id="quiz-progress-text"></p>
+                            <progress id="quiz-progress" max="10" value="0" aria-label="Liczba udzielonych odpowiedzi"></progress>
+                            <p id="question-context" class="question-context"></p>
+                            <h2 id="question-title" tabindex="-1" aria-describedby="question-context"></h2>
+                            <div id="answers" class="answers" role="group" aria-labelledby="question-title"></div>
+                            <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+                            <button id="next-question" class="button" type="button" disabled>Następne pytanie</button>
+                        </div>
+                        <div id="result-view" hidden>
+                            <h2 id="result-title" tabindex="-1"></h2>
+                            <p id="result-comment"></p>
+                            <section id="quiz-review" class="quiz-review" aria-labelledby="review-title" hidden>
+                                <h3 id="review-title">Wróć do tych materiałów</h3>
+                                <p>To pytania, przy których odpowiedź była błędna. Otwórz wpis, żeby przeczytać więcej.</p>
+                                <ul id="review-list"></ul>
+                            </section>
+                            <button id="restart-quiz" class="button" type="button">Spróbuj ponownie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <noscript><p class="container">Włącz JavaScript, aby rozwiązać quiz.</p></noscript>
+        </section>
+    </main>
+    <footer class="container site-footer">
+        <a href="index.html" class="brand">Kultura <span class="red-text">od Nowa</span></a>
+        <p>Projekt realizowany w ramach olimpiady Zwolnieni z Teorii.</p>
+        <a href="zrodla.html" class="text-link">Źródła materiałów</a>
+    </footer>
+</body>
+</html>
