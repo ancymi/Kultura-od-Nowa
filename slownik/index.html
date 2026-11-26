@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Poznaj regionalne słowa z różnych stron Polski i ich znaczenie. Projekt Kultura od Nowa.">
+    <title>Słownik regionalny. Kultura od Nowa</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/logo.png" type="image/png">
+    <script src="/navigation.js"></script>
+    <script src="/dane.js" defer></script>
+    <script src="/script.js" defer></script>
+</head>
+<body data-strona="slownik">
+    <a class="skip-link" href="#tresc">Przejdź do treści</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" aria-label="Kultura od Nowa, strona główna">
+                <span class="logo-frame">
+                    <span class="logo-fallback" aria-hidden="true" hidden>KN</span>
+                    <img src="/logo.png" alt="" width="76" height="76">
+                </span>
+                <span>Kultura <span class="red-text">od Nowa</span></span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu</button>
+            <nav id="main-nav" aria-label="Menu główne">
+                <a href="/">Start</a>
+                <a href="/slownik/" aria-current="page">Słownik</a>
+                <a href="/tradycje/">Tradycje</a>
+                <a href="/quiz/">Quiz</a>
+                <a href="/o-projekcie/">O projekcie</a>
+                <a href="/tworcy/">Twórcy</a>
+                <a href="/zrodla/">Źródła</a>
+                <a href="/linki/">Nasze media</a>
+            </nav>
+        </div>
+    </header>
+    <main id="tresc">
+        <section class="container section" aria-labelledby="page-title">
+            <h1 id="page-title" class="page-title">Słownik regionalny</h1>
+            <p class="section-intro">Szukaj po słowie lub znaczeniu. Wybierz region i kategorię, żeby zawęzić wyniki.</p>
+            <p id="database-summary" class="database-summary"></p>
+            <div class="filters">
+                <div class="search-field">
+                    <label for="search">Szukaj słowa lub znaczenia</label>
+                    <div class="search-actions"><input id="search" type="search" placeholder="Np. bimba, ziemniak…" autocomplete="off" aria-controls="cards"><button id="random-word" class="button button-outline" type="button" aria-controls="cards">Losuj słowo</button></div>
+                </div>
+                <div>
+                    <label for="region">Region</label>
+                    <select id="region" aria-controls="cards"><option value="">Wszystkie regiony</option></select>
+                </div>
+                <div>
+                    <label for="category">Kategoria</label>
+                    <select id="category" aria-controls="cards"><option value="">Wszystkie kategorie</option></select>
+                </div>
+                <div>
+                    <label for="sort">Sortowanie</label>
+                    <select id="sort" aria-controls="cards">
+                        <option value="az">Alfabetycznie: A do Z</option>
+                        <option value="za">Alfabetycznie: Z do A</option>
+                    </select>
+                </div>
+            </div>
+            <button id="clear-filters" class="clear-filters" type="button">Wyczyść filtry</button>
+            <button id="show-all" class="text-link link-button" type="button" hidden>Pokaż pełną listę</button>
+            <p id="results-count" class="results-count" role="status"></p>
+            <div id="cards" class="cards-grid"></div>
+            <p id="no-results" class="empty-state" hidden>Nie znaleziono pasujących materiałów. Zmień wyszukiwanie lub wyczyść filtry.</p>
+            <div class="load-more-wrap"><button id="load-more" class="button" type="button" aria-controls="cards">Pokaż więcej</button></div>
+            <p class="region-note">Regiony wskazują miejsca potwierdzone w publikacjach, nie pełny zasięg występowania. Numery stron PDF liczymy od pierwszej strony pliku.</p>
+            <details class="editorial-note">
+                <summary>Jak czytać słownik i zapisy historyczne?</summary>
+                <p>Wpisy oznaczone rokiem pochodzą ze źródeł historycznych. Poświadczają dawne użycie, a nie dzisiejszą powszechność słowa. Część wyrazów znajdziesz również w polszczyźnie ogólnej, czasem w innym znaczeniu.</p>
+                <p>Podajemy nazwę odmiany językowej za źródłem. Regionalizm, gwara, dialekt i język regionalny nie są nazwami zamiennymi. Warianty zapisu i dodatkowe znaczenia mieszczą się we wspólnych kartach; nie liczymy ich jako odrębnych haseł.</p>
+                <p>Najstarsze materiały z okolic Tykocina pochodzą ze słownika Zygmunta Glogera z 1893 roku. Autor badał mowę starszego pokolenia od około 1865 roku. Szczegółowy zakres innych zbiorów znajdziesz na <a href="/zrodla/">stronie źródeł</a>.</p>
+            </details>
+            <noscript><p>Włącz JavaScript, aby przeglądać karty i używać filtrów.</p></noscript>
+        </section>
+    </main>
+    <footer class="container site-footer">
+        <a href="/" class="brand">Kultura <span class="red-text">od Nowa</span></a>
+        <p>Projekt realizowany w ramach olimpiady Zwolnieni z Teorii.</p>
+        <a href="/zrodla/" class="text-link">Źródła materiałów</a>
+    </footer>
+</body>
+</html>

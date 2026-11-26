@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Źródła, regionalne słowa i tradycje Polski. Projekt Kultura od Nowa.">
+    <title>Źródła. Kultura od Nowa</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/logo.png" type="image/png">
+    <script src="/navigation.js"></script>
+    <script src="/dane.js" defer></script>
+    <script src="/script.js" defer></script>
+</head>
+<body data-strona="zrodla">
+    <a class="skip-link" href="#tresc">Przejdź do treści</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" aria-label="Kultura od Nowa, strona główna">
+                <span class="logo-frame">
+                    <span class="logo-fallback" aria-hidden="true" hidden>KN</span>
+                    <img src="/logo.png" alt="" width="76" height="76">
+                </span>
+                <span>Kultura <span class="red-text">od Nowa</span></span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu</button>
+            <nav id="main-nav" aria-label="Menu główne">
+                <a href="/">Start</a>
+                <a href="/slownik/">Słownik</a>
+                <a href="/tradycje/">Tradycje</a>
+                <a href="/quiz/">Quiz</a>
+                <a href="/o-projekcie/">O projekcie</a>
+                <a href="/tworcy/">Twórcy</a>
+                <a href="/zrodla/" aria-current="page">Źródła</a>
+                <a href="/linki/">Nasze media</a>
+            </nav>
+        </div>
+    </header>
+    <main id="tresc">
+        <section id="zrodla" class="sources-band" aria-labelledby="sources-title">
+            <div class="container section">
+                <h1 id="sources-title" class="page-title">Źródła</h1>
+                <p>Opisy przygotowaliśmy własnymi słowami na podstawie poniższych materiałów. Linki prowadzą do stron źródłowych i wymagają połączenia z internetem.</p>
+                <p class="region-note">Ostatnie uzupełnienie: 19 listopada 2026. Przy kartach znajdziesz hasło lub stronę PDF. Linki „Sprawdź źródło” otwierają nową kartę.</p>
+                <ul id="sources-list" class="sources-list"></ul>
+            </div>
+        </section>
+    </main>
+    <footer class="container site-footer">
+        <a href="/" class="brand">Kultura <span class="red-text">od Nowa</span></a>
+        <p>Projekt realizowany w ramach olimpiady Zwolnieni z Teorii.</p>
+        <a href="/zrodla/" class="text-link">Źródła materiałów</a>
+    </footer>
+</body>
+</html>

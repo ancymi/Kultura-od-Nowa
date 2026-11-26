@@ -158,7 +158,7 @@ function usunAdresWpisu() {
 }
 
 function adresMaterialu(material) {
-    return (material.typ === "Słowo" ? "slownik.html" : "tradycje.html") + "#" + material.id;
+    return (material.typ === "Słowo" ? "/slownik/" : "/tradycje/") + "#" + material.id;
 }
 
 function wybierzMaterial(material, przeniesFokus = true) {
