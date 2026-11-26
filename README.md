@@ -53,7 +53,3 @@ The materials cover the following regions and localities in Poland. Names are li
 - GitHub Pages
 
 The site is a lightweight static website. Its content and references are stored in the project files, with sources available on the website.
-
-## Logo
-
-The logo is stored in [`logo.png`](logo.png) and displayed at the top of this README. GitHub renders the image from that relative file path.
