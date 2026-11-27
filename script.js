@@ -430,17 +430,6 @@ function wyczyscPowtorke() {
     document.querySelector("#quiz-review").hidden = true;
 }
 
-document.querySelectorAll(".logo-frame img").forEach(function (obrazek) {
-    function aktualizujLogo() {
-        const poprawnyObrazek = obrazek.naturalWidth > 0;
-        obrazek.hidden = !poprawnyObrazek;
-        obrazek.previousElementSibling.hidden = poprawnyObrazek;
-    }
-    obrazek.addEventListener("load", aktualizujLogo);
-    obrazek.addEventListener("error", aktualizujLogo);
-    if (obrazek.complete) aktualizujLogo();
-});
-
 const slowa = materialy.filter(function (material) { return material.typ === "Słowo"; });
 
 if (kontenerKart) {
@@ -514,31 +503,3 @@ if (rodzajStrony === "start") {
     blok.append(naglowek, element("p", "word-meaning", tradycja.znaczenie), element("p", "word-region", tradycja.regiony.join(" · ")), element("p", "feature-description", tradycja.opis), linkDoZrodla(tradycja, tradycja.zrodla[0]));
 }
 
-const przyciskMenu = document.querySelector(".menu-toggle");
-const menu = document.querySelector("#main-nav");
-if (przyciskMenu && menu) {
-    document.documentElement.classList.add("nav-enhanced");
-    const telefon = window.matchMedia("(max-width: 760px)");
-    function zamknijMenu() {
-        menu.classList.remove("is-open");
-        przyciskMenu.setAttribute("aria-expanded", "false");
-        przyciskMenu.textContent = "Menu";
-    }
-    function dopasujMenu() {
-        przyciskMenu.hidden = !telefon.matches;
-        zamknijMenu();
-    }
-    przyciskMenu.addEventListener("click", function () {
-        const otwarte = menu.classList.toggle("is-open");
-        przyciskMenu.setAttribute("aria-expanded", String(otwarte));
-        przyciskMenu.textContent = otwarte ? "Zamknij" : "Menu";
-    });
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && menu.classList.contains("is-open")) {
-            zamknijMenu();
-            przyciskMenu.focus();
-        }
-    });
-    telefon.addEventListener("change", dopasujMenu);
-    dopasujMenu();
-}
