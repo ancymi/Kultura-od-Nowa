@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kulturaodnowa.com.pl/sitemap.xml
